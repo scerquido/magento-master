@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+			
+			<block class="Plazathemes\Bannerslider\Block\Bannerslider" name="Banner" before="-" template="bannerslider.phtml" />
+			
+        </referenceContainer>
+		
+		<referenceContainer name="main">
+			
+			
+			<block class="Plazathemes\Producttab\Block\Producttab" name="producttab" before="-" template="producttab.phtml" />
+			<block class="Magento\Framework\View\Element\Template" name="static_middle" template="Magento_Cms::static_middle.phtml" after="producttab"/>
+			<block class="Plazathemes\Bestsellerproduct\Block\Bestsellerproduct" name="bestsellerproduct" after="static_middle"  template="bestsellerproduct.phtml" />
+			<block class="Plazathemes\Blog\Block\Sidebar\Recent" name="blog.sidebar.recent" after="bestsellerproduct"  template="sidebar/slider.phtml" />
+			
+		</referenceContainer> 
+    </body>
+</page>

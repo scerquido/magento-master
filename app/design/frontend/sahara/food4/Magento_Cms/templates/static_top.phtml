@@ -1,0 +1,21 @@
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('static_top_food3')->toHtml();?>
+<script type="text/javascript">
+require(["jquery"], function($){
+	
+   $("#static_top_food3").owlCarousel({ 
+		autoPlay : false,
+		slideSpeed : 1000,
+		navigation : true,
+		stopOnHover : true,
+		pagination : false,
+		items : 2,
+		itemsDesktop : [1199,2],
+		itemsDesktopSmall : [991,2],
+		itemsTablet: [767,2],
+		itemsMobile : [567,1],
+		addClassActive : true,
+		scrollPerPage:false
+   });
+   
+});
+</script>  

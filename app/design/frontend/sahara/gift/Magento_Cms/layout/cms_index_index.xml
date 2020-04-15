@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+			<block class="Plazathemes\Bannerslider\Block\Bannerslider" name="Banner" before="-" template="bannerslider.phtml" />
+        </referenceContainer>
+		
+		<referenceContainer name="main">
+			
+			<block class="Magento\Framework\View\Element\Template" name="static_top" template="Magento_Cms::static_top.phtml" before="-"/>
+			<block class="Plazathemes\Featureproductslider\Block\Featureproductslider" after="static_top" name="featureproductslider" template="featureproductslider.phtml" />
+			<block class="Magento\Framework\View\Element\Template" name="static_middle" template="Magento_Cms::static_middle.phtml" after="featureproductslider"/>
+			<block class="Magento\Framework\View\Element\Template" name="module_group" template="Magento_Cms::module_group.phtml" after="static_middle"/>
+			<block class="Plazathemes\Brandslider\Block\Brandslider" name="Brand" after="module_group" template="brandslider.phtml" />
+			<block class="Plazathemes\Blog\Block\Sidebar\Recent" name="blog.sidebar.recent" after="Brand"  template="sidebar/slider.phtml" />
+			
+		</referenceContainer>
+		<move element="Banner" destination="lucian_header" />		
+    </body>
+</page>

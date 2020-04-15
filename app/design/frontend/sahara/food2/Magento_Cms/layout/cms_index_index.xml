@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+			<block class="Plazathemes\Bannerslider\Block\Bannerslider" name="Banner" before="-" template="bannerslider.phtml" />
+        </referenceContainer>
+		
+		<referenceContainer name="main">
+			<block class="Magento\Framework\View\Element\Template" name="static_top" template="Magento_Cms::static_top.phtml" before="-" />
+			<block class="Plazathemes\Pricecountdown\Block\Pricecountdown" ifconfig="pricecountdown/general/enabled" after="static_top" name="pricecountdown" template="saleslider.phtml" />
+			<block class="Plazathemes\Testimonial\Block\Testimonial" name="Testimo" after="pricecountdown" template="testimonial.phtml" />
+			<block class="Plazathemes\Featureproductslider\Block\Featureproductslider" after="Testimo" name="featureproductslider" template="featureproductslider.phtml" />
+			<block class="Magento\Framework\View\Element\Template" name="static_middle" template="Magento_Cms::static_middle.phtml" after="featureproductslider"/>
+			<block class="Magento\Framework\View\Element\Template" name="module_group" template="Magento_Cms::module_group.phtml" after="static_middle"/>
+			<block class="Plazathemes\Blog\Block\Sidebar\Recent" name="blog.sidebar.recent" after="module_group"  template="sidebar/slider.phtml" />
+		</referenceContainer>
+		<move element="Banner" destination="lucian_header" />		
+    </body>
+</page>

@@ -1,0 +1,33 @@
+<div class="slider-group">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-12 col-xs-12">
+				<?php echo $this->getLayout()->createBlock('Plazathemes\Bannerslider\Block\Bannerslider')->setTemplate('bannerslider.phtml')->toHtml();?>
+			</div>
+			<div class="col2 col-md-3 col-sm-12 col-xs-12">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('static_top_pet')->toHtml();?>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+require(["jquery"], function($){
+	
+   $("#static_top_pet").owlCarousel({ 
+		autoPlay : false,
+		slideSpeed : 1000,
+		navigation : true,
+		stopOnHover : true,
+		pagination : false,
+		items : 3,
+		itemsDesktop : [1199,3],
+		itemsDesktopSmall : [991,3],
+		itemsTablet: [767,2],
+		itemsMobile : [567,1],
+		addClassActive : true,
+		scrollPerPage:false
+   });
+   
+});
+</script>  

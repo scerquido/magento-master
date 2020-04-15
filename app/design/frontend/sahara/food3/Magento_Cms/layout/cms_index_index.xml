@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+			
+			<block class="Plazathemes\Bannerslider\Block\Bannerslider" name="Banner" before="-" template="bannerslider.phtml" />
+			<block class="Magento\Cms\Block\Block" name="search_group" after="Banner" >
+				<arguments>
+					<argument name="block_id" xsi:type="string">search_group_food3</argument>
+				</arguments>
+			</block>
+        </referenceContainer>
+		
+		<referenceContainer name="main">
+			<block class="Plazathemes\Pricecountdown\Block\Pricecountdown" ifconfig="pricecountdown/general/enabled" before="-" name="pricecountdown" template="saleslider.phtml" />
+			<block class="Magento\Framework\View\Element\Template" name="static_top" template="Magento_Cms::static_top.phtml" after="pricecountdown"/>
+			<block class="Plazathemes\Featureproductslider\Block\Featureproductslider" name="featureproductslider" template="featureproductslider.phtml" after="static_top" />
+			<block class="Magento\Framework\View\Element\Template" name="newproduct_group" template="Magento_Cms::newproduct_group.phtml" after="featureproductslider"/>
+			<block class="Magento\Cms\Block\Block" name="newsletter_group">
+				<arguments>
+					<argument name="block_id" xsi:type="string">newsletter_group_food3</argument>
+				</arguments>
+			</block>
+			<block class="Magento\Cms\Block\Block" name="information" after="newsletter_group">
+				<arguments>
+					<argument name="block_id" xsi:type="string">information_group_food3</argument>
+				</arguments>
+			</block>
+		</referenceContainer> 
+    </body>
+</page>

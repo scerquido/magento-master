@@ -1,0 +1,21 @@
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('corporate_beauty')->toHtml();?>
+<script type="text/javascript">
+require(["jquery"], function($){
+	
+   $("#corporate").owlCarousel({ 
+		autoPlay : false,
+		slideSpeed : 1000,
+		navigation : false,
+		stopOnHover : true,
+		pagination : false,
+		items : 3,
+		itemsDesktop : [1199,2],
+		itemsDesktopSmall : [991,2],
+		itemsTablet: [767,2],
+		itemsMobile : [479,1],
+		addClassActive : true,
+		scrollPerPage:false
+   });
+   
+});
+</script>  

@@ -1,0 +1,21 @@
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('static_middle_gift')->toHtml();?>
+<script type="text/javascript">
+require(["jquery"], function($){
+	
+   $("#static_middle_gift").owlCarousel({ 
+		autoPlay : false,
+		slideSpeed : 1000,
+		navigation : true,
+		stopOnHover : true,
+		pagination : false,
+		items : 3,
+		itemsDesktop : [1199,3],
+		itemsDesktopSmall : [991,2],
+		itemsTablet: [767,2],
+		itemsMobile : [567,1],
+		addClassActive : true,
+		scrollPerPage:false
+   });
+   
+});
+</script>  

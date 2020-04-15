@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+			
+			<block class="Plazathemes\Bannerslider\Block\Bannerslider" name="Banner" before="-" template="bannerslider.phtml" />
+			
+        </referenceContainer>
+		
+		<referenceContainer name="main">
+			<block class="Plazathemes\Newproductslider\Block\Newproductslider" name="newproductslider" before="-" template="newproductslider.phtml" />
+			<block class="Magento\Framework\View\Element\Template" name="timer_group" template="Magento_Cms::timer_group.phtml" after="newproductslider"/>
+			<block class="Magento\Framework\View\Element\Template" name="static_middle" template="Magento_Cms::static_middle.phtml" after="timer_group"/>
+			<block class="Plazathemes\Bestsellerproduct\Block\Bestsellerproduct" name="bestsellerproduct" after="static_middle"  template="bestsellerproduct.phtml" />
+			<block class="Magento\Cms\Block\Block" name="newsletter_group">
+				<arguments>
+					<argument name="block_id" xsi:type="string">newsletter_group_food3</argument>
+				</arguments>
+			</block>
+			<block class="Magento\Cms\Block\Block" name="information" after="newsletter_group">
+				<arguments>
+					<argument name="block_id" xsi:type="string">information_group_food3</argument>
+				</arguments>
+			</block>
+		</referenceContainer> 
+    </body>
+</page>
